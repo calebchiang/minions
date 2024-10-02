@@ -1,6 +1,6 @@
 package com.bcit.lab4calebchiang
 
-class Elf : Minion , Companion {
+class Elf : Minion, Companion {
     override var race = "Elf"
     override var baseHealth = 2
     override var baseSpeed = 8

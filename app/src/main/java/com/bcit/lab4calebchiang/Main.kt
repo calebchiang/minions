@@ -9,11 +9,10 @@ package com.bcit.lab4calebchiang
 fun main() {
     val elf = Elf()
     val orc = Orc(elf)
-    val humanItem = Item.NECKLACE
-    val humanCompanion = Elf()
-    val huntMission = Hunt(orc, humanItem, humanCompanion)
+    val elfCompanion = Elf()
+    val huntMission = Hunt(orc, companion = elfCompanion)
 
-    huntMission.repeat(3, object: MissionListener {
+    huntMission.repeat(5, object: MissionListener {
         override fun missionStart(minion: Minion) {
             println("""
                 ${minion.catchphrase}
@@ -33,7 +32,5 @@ fun main() {
         override fun missionComplete(minion: Minion, result: String) {
             println("A ${minion.race} has returned from a hunt, and found a $result")
         }
-
     })
-
 }

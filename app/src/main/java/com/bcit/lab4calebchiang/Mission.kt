@@ -1,10 +1,13 @@
 package com.bcit.lab4calebchiang
 
-abstract class Mission(protected val minion: Minion, protected val item: Item, protected val companion: Companion) {
+abstract class Mission(
+    protected val minion: Minion,
+    protected val item: Item? = null,
+    protected val companion: Companion? = null,
+){
 
     protected abstract fun determineMissionTime(): Int
     protected abstract fun reward(time: Int): String
-
 
     fun start(listener: MissionListener): Unit {
         listener.missionStart(minion)
